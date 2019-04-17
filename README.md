@@ -4,6 +4,10 @@ Example project setup, flash, and debug firmware using Visual Studio Code.
 
 Toolchain is cross-platform, however the instructions below are specifically for Linux.
 
+![](docs/vs-code-debug.png)
+
+Screencap of Visual Studio Code and Cortex-Debug extension.
+
 ## Prerequisites
 
 ### Download Requirements
@@ -11,9 +15,13 @@ Toolchain is cross-platform, however the instructions below are specifically for
 1. [nRF52 SDK](https://www.nordicsemi.com/Software-and-Tools/Software/nRF5-SDK)
 2. [nRF52 Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
 3. [Segger J-Link Software Tools](https://www.segger.com/downloads/jlink)
-4. [GNU-RM Embedded Toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+5. [GNU-RM Embedded Toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
   - It's recommended to install the GCC version that matches the Nordic SDK version. Check the GCC version in `<sdk>/components/toolchain/gcc/Makefile.posix` and download the appropriate version.
   - For nRF5 SDK 15.3.0, the gcc version is `gcc-arm-none-eabi-7-2018-q2-update`
+
+Optional:
+
+1. [Segger Ozone Debugger](https://www.segger.com/downloads/jlink/#Ozone)
 
 ### Setup Tools
 
@@ -38,6 +46,12 @@ sudo apt install ./JLink_Linux_V644f_x86_64.deb
 sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/local
 ```
 
+If optional tools are downloaded:
+
+```bash
+ sudo apt install ./Ozone_Linux_V262_x86_64.deb
+```
+
 Check `nrfjproj --version` that it's been installed correctly.
 
 ### Setup SDK
@@ -49,7 +63,7 @@ In the nRF52 SDK folder, update the values in `components/toolchain/gcc/Makefile
 
 This is only required if using a different gcc version than specified. It's recommended to use the same one as the SDK.
 
-## Build the Project
+## Using the Project
 
 ### Setup
 
@@ -72,7 +86,9 @@ make
 make flash
 ```
 
-### To Debug
+### Debugging
+
+#### Visual Studio Code
 
 In Visual Studio Code, install the Cortex-Debug extension.
 
@@ -83,3 +99,24 @@ To create a new configuration, select **Add Configuration** and choose **Cortex-
 In `.vscode/launch.json`, update the `executable` and/or `armToolchainPath` if required.
 
 Hit `F5` to start debugging.
+
+#### Segger O-zone
+
+Using Segger Ozone provides rich insights on memory, assembly instructions, peripheral registers, etc.
+
+![](docs/segger-ozone.png)
+Screencap of using Segger Ozone debugger.
+
+New project settings:
+
+1. Select **Create new project**
+2. Choose target device
+  - Select device: `nRF52840_xxAA` (or other)
+  - Peripherals: (blank)
+3. Connection settings
+  - Target interface: SWD
+  - Target interface speed: 1 MHz
+  - Host interface: USB
+  - Serial no: (blank)
+4. Program file
+  - Select `pca10056/mbr/armgcc/_build/nrf52840_xxaa.out`
