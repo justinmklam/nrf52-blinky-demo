@@ -6,7 +6,7 @@ Toolchain is cross-platform, however the instructions below are specifically for
 
 ![](docs/vs-code-debug.png)
 
-Screencap of Visual Studio Code and Cortex-Debug extension.
+*Screencap of Visual Studio Code and Cortex-Debug extension.*
 
 ## Prerequisites
 
@@ -105,7 +105,8 @@ Hit `F5` to start debugging.
 Using Segger Ozone provides rich insights on memory, assembly instructions, peripheral registers, etc.
 
 ![](docs/segger-ozone.png)
-Screencap of using Segger Ozone debugger.
+
+*Screencap of using Segger Ozone debugger.*
 
 New project settings:
 
