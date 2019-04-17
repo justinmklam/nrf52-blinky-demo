@@ -12,3 +12,6 @@
 *.ewp
 *.ewd
 *.icf
+
+# Cortex-Debug extension
+.vscode/.cortex-debug.*.json
