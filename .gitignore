@@ -19,3 +19,6 @@
 # Visual Studio Code files
 .vscode/settings.json
 .vscode/ipch/*
+
+# Segger Ozone
+*.jdebug.user
