@@ -49,6 +49,7 @@ sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/
 If optional tools are downloaded:
 
 ```bash
+# Segger Ozone
  sudo apt install ./Ozone_Linux_V262_x86_64.deb
 ```
 
