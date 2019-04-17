@@ -6,35 +6,39 @@ Toolchain is cross-platform, however the instructions below are specifically for
 
 ## Prerequisites
 
-### Download Tools
+### Download Requirements
 
-1. Download [nRF52 SDK](https://www.nordicsemi.com/Software-and-Tools/Software/nRF5-SDK)
-2. Download [nRF52 Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
-3. Download [Segger J-Link Software Tools](https://www.segger.com/downloads/jlink)
-4. Download [GNU-RM Embedded Toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-  - It's recommended to install the GCC version that matches the Nordic SDK version. Check the GCC version in `<sdk>/components/toolchain/gcc/Makefile.posix` and download the appropriate version.
+1.[nRF52 SDK](https://www.nordicsemi.com/Software-and-Tools/Software/nRF5-SDK)
+2.[nRF52 Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
+3.[Segger J-Link Software Tools](https://www.segger.com/downloads/jlink)
+4.[GNU-RM Embedded Toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+  - It's recommended to install the GCC version that matches the Nordic SDK version. Check the GCC version in `<nRF SDK>/components/toolchain/gcc/Makefile.posix` and download the appropriate version.
   - For nRF5 SDK 15.3.0, the gcc version is `gcc-arm-none-eabi-7-2018-q2-update`
 
 ### Setup Tools
+
+Run the commands below to extract the archives to the respective paths.
+
+- nRF5_SDK to `$HOME`
+- nRF Command Line Tools to `/opt/` and `/usr/local/bin`
+- gcc-arm-none-eabi to `/usr/local`
 
 ```bash
 # Unpack SDK to home directory
 unzip nRF5_SDK_15.3.0_59ac345.zip -d $(HOME)
 
-# Unpack gcc toolchain to /usr/local
-sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/local
-
 # Unpack nRF command line tools and make accessible in terminal
 sudo tar -xvf nRF-Command-Line-Tools_9_8_1_Linux-x86_64.tar --directory /opt/
 sudo ln -s /opt/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
+
+# Install Segger
+sudo apt install ./JLink_Linux_V644f_x86_64.deb
+
+# Unpack gcc toolchain to /usr/local
+sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/local
 ```
 
-Check `nrfjproj --version` that it's been installed correctly. Output should be something like:
-
-```
-nrfjprog version: 9.8.1
-JLinkARM.dll version: 6.44f
-```
+Check `nrfjproj --version` that it's been installed correctly.
 
 ### Setup SDK
 
@@ -64,22 +68,6 @@ make
 
 # To build and flash
 make flash
-```
-
-Example output:
-
-```
-DONE nrf52840_xxaa
-Flashing: _build/nrf52840_xxaa.hex
-nrfjprog -f nrf52 --program _build/nrf52840_xxaa.hex --sectorerase
-Parsing hex file.
-Erasing page at address 0x1000.
-Applying system reset.
-Checking that the area to write is not protected.
-Programming device.
-nrfjprog -f nrf52 --reset
-Applying system reset.
-Run.
 ```
 
 ### To Debug
