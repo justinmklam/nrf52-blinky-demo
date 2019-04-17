@@ -2,7 +2,7 @@ PROJECT_NAME     := blinky_pca10056e_mbr
 TARGETS          := nrf52811_xxaa flash_mbr
 OUTPUT_DIRECTORY := _build
 
-SDK_ROOT := ../../../../../..
+SDK_ROOT := $(HOME)/nRF5_SDK_15.3.0_59ac345
 PROJ_DIR := ../../..
 
 $(OUTPUT_DIRECTORY)/nrf52811_xxaa.out: \

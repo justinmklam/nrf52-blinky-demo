@@ -2,7 +2,7 @@ PROJECT_NAME     := blinky_pca10040e
 TARGETS          := nrf52810_xxaa
 OUTPUT_DIRECTORY := _build
 
-SDK_ROOT := ../../../../../..
+SDK_ROOT := $(HOME)/nRF5_SDK_15.3.0_59ac345
 PROJ_DIR := ../../..
 
 $(OUTPUT_DIRECTORY)/nrf52810_xxaa.out: \
