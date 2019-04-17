@@ -15,3 +15,7 @@
 
 # Cortex-Debug extension
 .vscode/.cortex-debug.*.json
+
+# Visual Studio Code files
+.vscode/settings.json
+.vscode/ipch/*
