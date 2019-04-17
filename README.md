@@ -6,7 +6,7 @@ Toolchain is cross-platform, however the instructions below are specifically for
 
 ![](docs/vs-code-debug.png)
 
-<p align="center"><i>Screencap of Visual Studio Code and Cortex-Debug extension.</i></p>
+<p align="center"><i>Screencap of Visual Studio Code using the Cortex-Debug extension.</i></p>
 
 ## Prerequisites
 
@@ -91,15 +91,12 @@ make flash
 
 #### Visual Studio Code
 
-In Visual Studio Code, install the Cortex-Debug extension.
+Install the [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension.
 
-Open the debug pane (`CTRL+SHIFT+D`) and select **Cortex-Debug**.
-
-To create a new configuration, select **Add Configuration** and choose **Cortex-Debug**.
-
-In `.vscode/launch.json`, update the `executable` and/or `armToolchainPath` if required.
-
-Hit `F5` to start debugging.
+1. Open the debug pane (`CTRL+SHIFT+D`) and select **Cortex-Debug**.
+2. To create a new configuration, select **Add Configuration** and choose **Cortex-Debug**.
+3. If required, update the `executable` and/or `armToolchainPath` in `.vscode/launch.json`.
+4. Hit `F5` to start debugging.
 
 #### Segger O-zone
 
