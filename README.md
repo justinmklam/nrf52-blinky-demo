@@ -50,7 +50,7 @@ If optional tools are downloaded:
 
 ```bash
 # Segger Ozone
- sudo apt install ./Ozone_Linux_V262_x86_64.deb
+sudo apt install ./Ozone_Linux_V262_x86_64.deb
 ```
 
 Check `nrfjproj --version` that it's been installed correctly.
