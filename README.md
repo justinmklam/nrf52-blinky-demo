@@ -4,13 +4,20 @@ Example project setup, flash, and debug firmware using Visual Studio Code.
 
 Nordic toolchain is cross-platform, but the instructions below are specifically for Linux. However, they can easily be replicate in Windows as long as installation paths and environment variables are set correctly.
 
-In general: When using any editor + terminal for nRF52 development, the things to remember are:
+## General Comments
+
+When using any editor + terminal for nRF52 development, the things to remember are:
 
 - GCC path is set in `<sdk>/components/toolchain/gcc/Makefile.posix`
 - Makefile is up to date with:
   - `SDK_ROOT` is pointed to where `<sdk>` is located
   - Source and header files for new components
   - Board/component configurations in `sdk_config.h`
+
+With Visual Studio Code:
+
+- In `.vscode/c_cpp_properties.json`, update `defines`, `includePath`, and `compilerPath` as required
+- In `.vscode/launch.json`, update `executable` and `armToolchainPath` as required
 
 ![](docs/vs-code-debug.png)
 
@@ -112,6 +119,9 @@ make
 
 # To build and flash
 make flash
+
+# If a SoftDevice is included in your project
+make flash_softdevice
 ```
 
 ### Segger RTT Log
@@ -167,3 +177,7 @@ New project settings:
   - Serial no: (blank)
 4. Program file
   - Select `pca10056/mbr/armgcc/_build/nrf52840_xxaa.out`
+
+## Resources
+
+- [Nordic Information Center](https://infocenter.nordicsemi.com/index.jsp) - Official Documentation
