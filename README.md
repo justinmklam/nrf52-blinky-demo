@@ -2,15 +2,34 @@
 
 Example project setup, flash, and debug firmware using Visual Studio Code.
 
-Toolchain is cross-platform, however the instructions below are specifically for Linux.
+Nordic toolchain is cross-platform, but the instructions below are specifically for Linux. However, they can easily be replicate in Windows as long as installation paths and environment variables are set correctly.
+
+In general: When using any editor + terminal for nRF52 development, the things to remember are:
+
+- GCC path is set in `<sdk>/components/toolchain/gcc/Makefile.posix`
+- Makefile is up to date with:
+  - `SDK_ROOT` is pointed to where `<sdk>` is located
+  - Source and header files for new components
+  - Board/component configurations in `sdk_config.h`
 
 ![](docs/vs-code-debug.png)
 
 <p align="center"><i>Screencap of Visual Studio Code using the Cortex-Debug extension.</i></p>
 
-## Prerequisites
+## Installation
 
-### Download Requirements
+### System Tools
+
+```bash
+sudo apt install build-essential
+
+# Required by java-based CMSIS Configuration Wizard
+sudo apt install default-jre
+```
+
+### nRF52 Toolchain
+
+#### Download
 
 1. [nRF52 SDK](https://www.nordicsemi.com/Software-and-Tools/Software/nRF5-SDK)
 2. [nRF52 Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
@@ -23,7 +42,7 @@ Optional:
 
 1. [Segger Ozone Debugger](https://www.segger.com/downloads/jlink/#Ozone)
 
-### Setup Tools
+#### Setup
 
 Run the commands below to extract the archives to the respective paths.
 
@@ -55,7 +74,7 @@ sudo apt install ./Ozone_Linux_V262_x86_64.deb
 
 Check `nrfjproj --version` that it's been installed correctly.
 
-### Setup SDK
+### Nordic SDK Setup
 
 In the nRF52 SDK folder, update the values in `components/toolchain/gcc/Makefile.posix`:
 
@@ -88,7 +107,7 @@ make sdk_config
 ```bash
 cd blinky/pca10056/mbr/armgcc
 
-# To just build
+# To just build. Optional `-jN` flag, where N is number of cores to use
 make
 
 # To build and flash
