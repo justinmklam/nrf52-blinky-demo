@@ -36,7 +36,7 @@ Run the commands below to extract the archives to the respective paths.
 unzip nRF5_SDK_15.3.0_59ac345.zip -d $HOME
 
 # Unpack nRF command line tools and make accessible in terminal
-sudo tar -xvf nRF-Command-Line-Tools_9_8_1_Linux-x86_64.tar --directory /opt/
+tar -xvf nRF-Command-Line-Tools_9_8_1_Linux-x86_64.tar --directory /opt/
 sudo ln -s /opt/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
 
 # Install Segger
@@ -75,6 +75,14 @@ In `blinky/` directory, do a global search and replace to update the SDK root to
 
 If required, add definition flags and/or update include paths in `.vscode/c_cpp_properties.json` (ie. add `FREERTOS` under `defines` if using FreeRTOS).
 
+### Configuring `sdk_config.h`
+
+[CMSIS Configuration Wizard](https://sourceforge.net/projects/cmsisconfig/) is integrated with example makefiles. In order to open sdk_config.h in this tool, type:
+
+```
+make sdk_config
+```
+
 ### Build and Flash
 
 ```bash
@@ -86,6 +94,27 @@ make
 # To build and flash
 make flash
 ```
+
+### Segger RTT Log
+
+To use the RTT Viewer equivalent on GNU/Linux, start by opening a terminal and starting `JLinkExe`.
+
+Follow the steps below to connect the device (in this case, `NRF52840_XXAA`). Press ENTER to accept the default value. The only option that needs to be changed (aside from board, if necessary) is the target interface (use `SWD` instead of `JTAG`).
+
+```
+J-Link>connect
+Device>
+Please specify target interface:
+  J) JTAG (Default)
+  S) SWD
+  T) cJTAG
+TIF>S
+Specify target interface speed [kHz]. <Default>: 4000 kHz
+Speed>
+Device "NRF52840_XXAA" selected.
+```
+
+In another terminal, start `JLinkRTTClient`. RTT output should now start displaying.
 
 ### Debugging
 
