@@ -10,7 +10,7 @@
               "${HOME}/nRF5_SDK_15.3.0_59ac345/external/freertos/portable/CMSIS/nrf52"
           ],
           "forcedInclude": [
-              "${workspaceFolder}/blinky/pca10056/mbr/config/sdk_config.h"
+              "${workspaceFolder}/blinky/pca10056/blank/config/sdk_config.h"
           ],
           "defines": [
               "BOARD_PCA10056",
