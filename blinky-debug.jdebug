@@ -22,7 +22,7 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  File.Open ("$(ProjectDir)/blinky/pca10056/mbr/armgcc/_build/nrf52840_xxaa.out");
+  File.Open ("$(ProjectDir)/blinky/pca10056/blank/armgcc/_build/nrf52840_xxaa.out");
 }
 
 /*********************************************************************

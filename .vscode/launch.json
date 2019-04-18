@@ -7,7 +7,7 @@
     {
       "name": "nRF52 (pca10056)",
       "cwd": "${workspaceRoot}",
-      "executable": "blinky/pca10056/mbr/armgcc/_build/nrf52840_xxaa.out",
+      "executable": "blinky/pca10056/blank/armgcc/_build/nrf52840_xxaa.out",
       "armToolchainPath": "/usr/local/gcc-arm-none-eabi-7-2018-q2-update/bin/",
       "request": "launch",
       "type": "cortex-debug",
