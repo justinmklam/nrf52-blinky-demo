@@ -1,8 +1,8 @@
-# nRF52 Blinky Demo
+# nRF52 Blinky Demo with Visual Studio Code
 
-Example project setup, flash, and debug firmware using Visual Studio Code.
+Example project to setup, flash, and debug nRF52 firmware using Visual Studio Code.
 
-Nordic toolchain is cross-platform, but the instructions below are specifically for Linux. However, they can easily be replicate in Windows as long as installation paths and environment variables are set correctly.
+The Nordic toolchain is cross-platform, but the instructions below are specifically for Linux. However, they can easily be replicated in Windows as long as installation paths and environment variables are set correctly.
 
 ## General Comments
 
@@ -35,6 +35,12 @@ sudo apt install build-essential
 sudo apt install default-jre
 ```
 
+### Code Editor
+
+- [Visual Studio Code](https://code.visualstudio.com/download)
+  - [C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) by Microsoft
+  - [Cortex-Debug Extension](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) by marus25
+
 ### nRF52 Toolchain
 
 #### Download
@@ -43,8 +49,8 @@ sudo apt install default-jre
 2. [nRF52 Command Line Tools](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
 3. [Segger J-Link Software Tools](https://www.segger.com/downloads/jlink)
 5. [GNU-RM Embedded Toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-  - It's recommended to install the GCC version that matches the Nordic SDK version. Check the GCC version in `<sdk>/components/toolchain/gcc/Makefile.posix` and download the appropriate version.
-  - For nRF5 SDK 15.3.0, the gcc version is `gcc-arm-none-eabi-7-2018-q2-update`
+    - It's recommended to install the GCC version that matches the Nordic SDK version. Check the GCC version in `<sdk>/components/toolchain/gcc/Makefile.posix` and download the appropriate version.
+    - For nRF5 SDK 15.3.0, the gcc version is `gcc-arm-none-eabi-7-2018-q2-update`
 
 Optional:
 
@@ -152,8 +158,6 @@ In another terminal, start `JLinkRTTClient`. RTT output should now start display
 
 #### Visual Studio Code
 
-Install the [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension.
-
 1. Open the debug pane (`CTRL+SHIFT+D`) and select **Cortex-Debug**.
 2. To create a new configuration, select **Add Configuration** and choose **Cortex-Debug**.
 3. If required, update the `executable` and/or `armToolchainPath` in `.vscode/launch.json`.
@@ -171,15 +175,15 @@ New project settings:
 
 1. Select **Create new project**
 2. Choose target device
-  - Select device: `nRF52840_xxAA` (or other)
-  - Peripherals: (blank)
+    - Select device: `nRF52840_xxAA` (or other)
+    - Peripherals: (blank)
 3. Connection settings
-  - Target interface: SWD
-  - Target interface speed: 1 MHz
-  - Host interface: USB
-  - Serial no: (blank)
+    - Target interface: SWD
+    - Target interface speed: 1 MHz
+    - Host interface: USB
+    - Serial no: (blank)
 4. Program file
-  - Select `pca10056/mbr/armgcc/_build/nrf52840_xxaa.out`
+    - Select `pca10056/mbr/armgcc/_build/nrf52840_xxaa.out`
 
 ## Resources
 
