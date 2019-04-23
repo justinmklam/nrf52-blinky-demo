@@ -18,6 +18,7 @@ With Visual Studio Code:
 
 - In `.vscode/c_cpp_properties.json`, update `defines`, `includePath`, and `compilerPath` as required
 - In `.vscode/launch.json`, update `executable` and `armToolchainPath` as required
+- In `.vscode/tasks.json`, update the current working directory `cwd` and `command` as required (ie. changing to `make flash -j8` to use 8 cores to build).
 
 ![](docs/vs-code-debug.png)
 
@@ -123,6 +124,8 @@ make flash
 # If a SoftDevice is included in your project
 make flash_softdevice
 ```
+
+Build tasks can also be added to `.vscode/tasks.json`. Pressing `CTRL+SHIFT+B` will execute the default build task (in this case, the default build task is `make flash` for `PCA10056`).
 
 ### Segger RTT Log
 
