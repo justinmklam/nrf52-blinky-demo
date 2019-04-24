@@ -17,7 +17,6 @@
 .vscode/.cortex-debug.*.json
 
 # Visual Studio Code files
-.vscode/settings.json
 .vscode/ipch/*
 
 # Segger Ozone
