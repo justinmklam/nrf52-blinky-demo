@@ -25,7 +25,7 @@
               "DEBUG",
               "DEBUG_NRF"
           ],
-          "compilerPath": "/usr/local/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gcc",
+          "compilerPath": "/usr/local/bin/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gcc",
           "cStandard": "c11",
           "cppStandard": "c++17",
           "intelliSenseMode": "clang-x64"

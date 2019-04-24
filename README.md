@@ -62,7 +62,7 @@ Run the commands below to extract the archives to the respective paths.
 
 - nRF5_SDK to `$HOME`
 - nRF Command Line Tools to `/opt/` and `/usr/local/bin`
-- gcc-arm-none-eabi to `/usr/local`
+- gcc-arm-none-eabi to `/usr/local/bin`
 
 ```bash
 # Unpack SDK to home directory
@@ -75,8 +75,8 @@ sudo ln -s /opt/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
 # Install Segger
 sudo apt install ./JLink_Linux_V644f_x86_64.deb
 
-# Unpack gcc toolchain to /usr/local
-sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/local
+# Unpack gcc toolchain to /usr/local/bin
+sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/local/bin
 ```
 
 If optional tools are downloaded:
