@@ -155,7 +155,35 @@ Speed>
 Device "NRF52840_XXAA" selected.
 ```
 
-In another terminal, start `JLinkRTTClient`. RTT output should now start displaying.
+In another terminal, start `JLinkRTTClient`. RTT output should now start displaying. Output should be as follows:
+
+```
+###RTT Client: ************************************************************ 
+###RTT Client: *               SEGGER Microcontroller GmbH                * 
+###RTT Client: *   Solutions for real time microcontroller applications   * 
+###RTT Client: ************************************************************ 
+###RTT Client: *                                                          * 
+###RTT Client: *       (c) 2012 - 2016  SEGGER Microcontroller GmbH       * 
+###RTT Client: *                                                          * 
+###RTT Client: *     www.segger.com     Support: support@segger.com       * 
+###RTT Client: *                                                          * 
+###RTT Client: ************************************************************ 
+###RTT Client: *                                                          * 
+###RTT Client: * SEGGER J-Link RTT Client   Compiled Apr 12 2019 17:30:19 * 
+###RTT Client: *                                                          * 
+###RTT Client: ************************************************************ 
+
+###RTT Client: -----------------------------------------------
+###RTT Client: Connecting to J-Link RTT Server via localhost:19021  Connected.
+SEGGER J-Link V6.44f - Real time terminal output
+J-Link OB-SAM3U128-V2-NordicSemi compiled Jan  7 2019 14:07:15 V1.0, SN=683903307
+Process: JLinkExe
+<info> app: SPI example started.
+<info> app: Transfer completed.
+<info> app: Transfer completed.
+<info> app: Transfer completed.
+...
+```
 
 ### Debugging
 
