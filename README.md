@@ -106,7 +106,10 @@ In `blinky/` directory, do a global search and replace to update the SDK root to
 - From: `SDK_ROOT := ../../../../../..`
 - To: `SDK_ROOT := $(HOME)/nRF5_SDK_15.3.0_59ac345`
 
-If required, add definition flags and/or update include paths in `.vscode/c_cpp_properties.json` (ie. add `FREERTOS` under `defines` if using FreeRTOS).
+If required, update the following in `.vscode/c_cpp_properties.json`:
+
+- Include paths
+- Defines based on C/assembler flags in the Makefile
 
 ### Configuring `sdk_config.h`
 
