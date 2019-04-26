@@ -155,6 +155,12 @@ Speed>
 Device "NRF52840_XXAA" selected.
 ```
 
+Alternatively, you can specify the configurations in the command line:
+
+```
+JLinkExe -device NRF52832_XXAA -if SWD -speed 4000 -autoconnect 1
+```
+
 In another terminal, start `JLinkRTTClient`. RTT output should now start displaying. Output should be as follows:
 
 ```
